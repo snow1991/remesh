@@ -1,0 +1,13 @@
+cmake_minimum_required(VERSION 2.8)
+
+project(remesh)
+set(CMAKE_CXX_FLAGS "-fopenmp -fPIC -fpermissive")
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "$ENV{HOME}/usr/share/cmake/Modules/")
+include($ENV{HOME}/usr/share/cmake/Modules/geo_sim_sdk.cmake)
+link_directories($ENV{HOME}/usr/lib)
+
+add_subdirectory(pre_processing)
+add_subdirectory(density)
+add_subdirectory(sampling)
+add_subdirectory(relaxation)
+add_subdirectory(test)
